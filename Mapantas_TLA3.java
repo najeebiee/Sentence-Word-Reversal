@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package main;
 
 import java.util.*;
@@ -10,12 +6,13 @@ public class Mapantas_TLA3 {
 
     public static void main(String[] args) {
        
-        System.out.println("Sentence Reverse");
+        System.out.println("Sentence Word Reversal");
         System.out.println("Enter your words (q to Quit)\n");
         
         Stack<String> sentence = new Stack<>();
         Scanner s = new Scanner(System.in);
         boolean run = true;
+        boolean print = true;
         
         while (run) {
             System.out.print("word : ");
@@ -25,19 +22,23 @@ public class Mapantas_TLA3 {
                 sentence.push(word);
             } else {
                 run = false;
+                print = false;
             }
             
         }
         
-        for (String words : sentence) {
-            System.out.print(words + " ");
-        }
+        if (print) {
+            for (String words : sentence) {
+                System.out.print(words + " ");
+            }
+            
+            System.out.print("\nReversed : ");
         
-        System.out.print("\nReversed : ");
-        
-        while (!sentence.isEmpty()) {
-            String popped = sentence.pop();
-            System.out.print(popped + " ");
+            while (!sentence.isEmpty()) {
+                String popped = sentence.pop();
+                System.out.print(popped + " ");
+            }
+            
         }
         
     }
